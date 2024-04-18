@@ -18,7 +18,7 @@ const Sidebar = ({className} : Props) => {
         )}>
             <Link href='/learn'>
                 <div className="pt-8 pl-4 pb-7 flex items-center gap-x-3">
-                    <Image src="/OIG1.png" height={40} width={40} alt="Logo" />
+                    <Image src="/apple.png" height={40} width={40} alt="Logo" />
                     <h1 className="text-2xl font-extrabold text-green-600 tracking-wide">Lingo</h1>
                 </div>
             </Link>

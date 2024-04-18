@@ -28,7 +28,7 @@ export const upsetUserProgress = async (courseId: number) => {
         await db.update(userProgress).set({
             activeCourseId: courseId,
             userName: user.firstName || "User",
-            userImageSrc: user.imageUrl || "/OIG1.png",
+            userImageSrc: user.imageUrl || "/apple.png",
         })
         
         revalidatePath("/courses");
@@ -40,7 +40,7 @@ export const upsetUserProgress = async (courseId: number) => {
         userId,
         activeCourseId: courseId,
         userName: user.firstName || "User",
-        userImageSrc: user.imageUrl || "/OIG1.png",
+        userImageSrc: user.imageUrl || "/apple.png",
     })
 
     revalidatePath("/courses");
