@@ -98,7 +98,7 @@ const main = async () => {
             {
                 id: 2,
                 challengeId: 1,
-                imageSrc: "/woman.png",
+                imageSrc: "/woman.jpg",
                 correct: false,
                 text: "the woman",
                 audioSrc: "/es_woman.mp3"
@@ -106,7 +106,7 @@ const main = async () => {
             {
                 id: 3,
                 challengeId: 1,
-                imageSrc: "/robot.png",
+                imageSrc: "/robot.jpg",
                 correct: false,
                 text: "the woman",
                 audioSrc: "/es_robot.mp3"
