@@ -23,9 +23,9 @@ const Sidebar = ({className} : Props) => {
                 </div>
             </Link>
             <div className="flex flex-col gap-y-2 flex-1">
-                <SidebarItem label='Learn' href='/learn' iconSrc='/vercel.svg'/>
-                <SidebarItem label='Leaderboard' href='/leaderboard' iconSrc='/vercel.svg'/>
-                <SidebarItem label='quests' href='/quest' iconSrc='/vercel.svg'/>
+                <SidebarItem label='Learn' href='/learn' iconSrc='/leaderBoard.png'/>
+                <SidebarItem label='Leaderboard' href='/leaderboard' iconSrc='/quest.png'/>
+                <SidebarItem label='quests' href='/quests' iconSrc='/quest.png'/>
                 <SidebarItem label='shop' href='/shop' iconSrc='/vercel.svg'/>
             </div>
             <div className="p-4">
