@@ -1,10 +1,12 @@
 "use server"
 
+import { and, eq } from "drizzle-orm";
+
 import db from "@/db/drizzle";
 import { getUserProgress } from "@/db/queries";
 import { challengeProgress, challenges, userProgress } from "@/db/schema";
+
 import { auth } from "@clerk/nextjs"
-import { and, eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 
 export const upsertChallengeProgress = async (challengeId: number) => {

@@ -1,12 +1,15 @@
 "use client";
 
 import { challengeOptions, challenges } from "@/db/schema";
-import { startTransition, useState, useTransition } from "react";
+import { useState, useTransition } from "react";
+
+import { upsertChallengeProgress } from "@/actions/challenge-progress";
+import { reduceHearts } from "@/actions/user-progress";
+
 import { Header } from "./header";
 import { QuestionBubble } from "./question-bubble";
 import { Challenge } from "./challenge";
 import { Footer } from "./footer";
-import { upsertChallengeProgress } from "@/store/challenge-progress";
 import { toast } from "sonner";
 
 type Props = {
@@ -87,6 +90,22 @@ export const Quiz = ({
                         // This is a practice
                         if(initialPercentage === 100){
                             setHearts((prev) => Math.min(prev + 1, 5));
+                        }
+                    })
+                    .catch(() => toast.error("Something went wrong. Please try again."));
+            });
+        } else {
+            startTransition(() => {
+                reduceHearts(challenge.id)
+                    .then((response) => {
+                        if(response?.error === "hearts"){
+                            console.error("Missing hearts");
+                            return;
+                        }
+                        setStatus("wrong");
+                        
+                        if(!response?.error){
+                            setHearts((prev) => Math.max(prev - 1,0))
                         }
                     })
                     .catch(() => toast.error("Something went wrong. Please try again."));
